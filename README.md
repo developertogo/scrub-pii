@@ -63,13 +63,13 @@ Usage of ./scrub-pii:
 ```
 
 ### 2. Sample run on test `07_mixed_type_arrays`
-![Scrub 07_mixed_type_arrays](https://github.com/developertogo/scrub-pii/blob/master/docs/assets/sample-pretty-test-07-run.jpg)
+![Scrub 07_mixed_type_arrays](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-pretty-test-07-run.jpg)
 
 ### 3. Sample run on test `06_nested_object` with no pretty output (i.e. -pretty=false)
-![Scrub 06_nested_object](https://github.com/developertogo/scrub-pii/blob/master/docs/assets/sample-no-pretty-unit-test-run.jpg)
+![Scrub 06_nested_object](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-no-pretty-unit-test-run.jpg)
 
 ### 4. Sample run `all unit tests` run
-![All unit tests run](https://github.com/developertogo/scrub-pii/blob/master/docs/assets/sample-unit-test-run.jpg)
+![All unit tests run](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-unit-test-run.jpg)
 
 ### 5. Sample run `all unit tests` run with -v (`verbose` mode enabled)
-![Verbosed all unit tests run](https://github.com/developertogo/scrub-pii/blob/master/docs/assets/sample-verbose-unit-test-run.jpg)
+![Verbosed all unit tests run](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-verbose-unit-test-run.jpg)
