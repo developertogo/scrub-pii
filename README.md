@@ -75,6 +75,10 @@ cd scrub-pii
 ```
 See sample runs in the next section [Sample Runs](https://github.com/developertogo/scrub-pii#sample-runs)
 
+### Note:
+* If you're on a macOS, you can simply use `./scrub-pii`
+* If you're on other OS, you can build it by running `go build` and then `./scrupb-pii`
+
 # Sample Runs
 
 ### 1. Usage
