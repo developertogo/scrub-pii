@@ -54,7 +54,7 @@ A handful of example test "scrubs" are in the `./tests/` directory. Each subdire
 
 1. Install [Golang](https://go.dev/doc/install) if you don't have it already.
 
-**Note**: This code was tested with Golang version: `go1.19.1 darwin/amd64` on a Mac OS.
+**Note**: This code was tested with Golang version: `go1.19.1 darwin/amd64` on a Mac OS Version `10.15.7 (19H15)`.
 
 ### 1. Run code sample without Docker
 
