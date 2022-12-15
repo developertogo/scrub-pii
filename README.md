@@ -86,8 +86,8 @@ Usage of ./scrub-pii:
 ### 2. Sample run on test `07_mixed_type_arrays`
 ![Scrub 07_mixed_type_arrays](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-pretty-test-07-run.jpg)
 
-### 3. Sample run on test `06_nested_object` with no pretty output (i.e. -pretty=false)
-![Scrub 06_nested_object](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-no-pretty-test-06-run.jpg)
+### 3. Sample run on test `08_sensitive_nested_objects` with no pretty output (i.e. -pretty=false)
+![Scrub 06_nested_object](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-no-pretty-test-08-run.jpg)
 
 ### 4. Sample run of `all unit tests`
 ![All unit tests run](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-unit-test-run.jpg)
