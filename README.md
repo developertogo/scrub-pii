@@ -1,7 +1,7 @@
 Scrub Personal Identifying Information Problem
 ==================================================
 
-#####Note: The input files contain unstructured JSON data
+### Note: The input files contain unstructured JSON data
 
 Application event tracking to external services often involves meta data about the user who took the action. When this event information is sent to a third party, we want to scrub all personally identifying data reported, without losing information about what fields were actually recorded.
 
@@ -41,17 +41,45 @@ Any valid JSON input should be able to be handled. Value types for sensitive key
   - `Object`: if the key matches a sensitive field, all values of the nested object should be scrubbed as described by other field types. If the nested object does not correspond to a sensitive key, each key/value pair of the nested object should be evaluated as described by other field types
   - `null`: value should be unmodified
 
-## Tests
+## `Input`, `Output`, and `Sensitive Fields` file tests provided
 
-A handful of example test "scrubs" are in the `/tests/` directory. Each subdirectory has an `input.json`, `sensitive_fields.txt`, and corresponding `output.json` that is expected.
+A handful of example test "scrubs" are in the `./tests/` directory. Each subdirectory has an `input.json`, `sensitive_fields.txt`, and corresponding `output.json` that is expected.
 
 ---
+---
 
-## Sample Runs
+# Solution in Golang
+
+There are 2 ways to try out the code sample with Docker or without Docker.
+
+**Note**: This code was tested with Golang version: `go1.19.1 darwin/amd64` on a Mac OS.
+
+### 1. Run code sample with Docker
+
+Install [Docker](https://hub.docker.com/?overlay=onboarding) if you don't have it yet.
+```
+git clone git@github.com:developertogo/scrub-pii.git
+cd scrub-pii
+docker build -t developertogo/scrub-pii .
+docker run -it --rm developertogo/scrub-pii
+```
+See sample runs in the next section [Sample Runs](https://github.com/developertogo/scrub-pii#sample-runs)
+
+### 2. Run code sample without Docker
+
+Install [Golang](https://go.dev/doc/install) if you don't have it already.
+
+```
+git clone git@github.com:developertogo/scrub-pii.git
+cd scrub-pii
+```
+See sample runs in the next section [Sample Runs](https://github.com/developertogo/scrub-pii#sample-runs)
+
+# Sample Runs
 
 ### 1. Usage
 ```
-$ ./scrub-pii   
+$ ./scrub-pii
 Usage: scrub-pii <input json file> <sensitive fields file>
 ```
 Command option: `-h`
