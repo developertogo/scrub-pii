@@ -56,8 +56,7 @@ A handful of example test "scrubs" are in the `./tests/` directory. Each subdire
 
 **Note**: This code was tested with Golang version: `go1.19.1 darwin/amd64` on a Mac OS Version `10.15.7 (19H15)`.
 
-### 1. Run code sample without Docker
-
+### Git clone this repo
 
 ```
 git clone git@github.com:developertogo/scrub-pii.git
@@ -67,7 +66,7 @@ See sample runs in the next section [Sample Runs](https://github.com/developerto
 
 ### Note:
 * If you're on a macOS, you can simply use `./scrub-pii`
-* If you're on **other OS**, you can build it by running `go build` and then `./scrupb-pii`
+* If you're on **other OS**, you can build it by running `go build` and then run the command line: `./scrupb-pii`
 
 # Sample Runs
 
@@ -90,8 +89,8 @@ Usage of ./scrub-pii:
 ### 3. Sample run on test `06_nested_object` with no pretty output (i.e. -pretty=false)
 ![Scrub 06_nested_object](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-no-pretty-unit-test-run.jpg)
 
-### 4. Sample run `all unit tests` run
+### 4. Sample run of `all unit tests`
 ![All unit tests run](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-unit-test-run.jpg)
 
-### 5. Sample run `all unit tests` run with -v (`verbose` mode enabled)
+### 5. Sample run of `all unit tests` with -v (`verbose` mode enabled)
 ![Verbosed all unit tests run](https://github.com/developertogo/scrub-pii/blob/main/assets/sample-verbose-unit-test-run.jpg)
