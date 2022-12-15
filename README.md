@@ -50,24 +50,14 @@ A handful of example test "scrubs" are in the `./tests/` directory. Each subdire
 
 # Solution in Golang
 
-There are 2 ways to try out the code sample with Docker or without Docker.
+## Installation Prerequisite
+
+1. Install [Golang](https://go.dev/doc/install) if you don't have it already.
 
 **Note**: This code was tested with Golang version: `go1.19.1 darwin/amd64` on a Mac OS.
 
-### 1. Run code sample with Docker
+### 1. Run code sample without Docker
 
-Install [Docker](https://hub.docker.com/?overlay=onboarding) if you don't have it yet.
-```
-git clone git@github.com:developertogo/scrub-pii.git
-cd scrub-pii
-docker build -t developertogo/scrub-pii .
-docker run -it --rm developertogo/scrub-pii
-```
-See sample runs in the next section [Sample Runs](https://github.com/developertogo/scrub-pii#sample-runs)
-
-### 2. Run code sample without Docker
-
-Install [Golang](https://go.dev/doc/install) if you don't have it already.
 
 ```
 git clone git@github.com:developertogo/scrub-pii.git
@@ -77,7 +67,7 @@ See sample runs in the next section [Sample Runs](https://github.com/developerto
 
 ### Note:
 * If you're on a macOS, you can simply use `./scrub-pii`
-* If you're on other OS, you can build it by running `go build` and then `./scrupb-pii`
+* If you're on **other OS**, you can build it by running `go build` and then `./scrupb-pii`
 
 # Sample Runs
 
