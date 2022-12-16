@@ -25,8 +25,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	inputPath := flag.Args()[0]
-	sensitiveFieldsPath := flag.Args()[1]
+	sensitiveFieldsPath := flag.Args()[0]
+	inputPath := flag.Args()[1]
 
 	// scrub the input file for the given sensitive fields
 	output, err := ScrubPersonalInfo(inputPath, sensitiveFieldsPath)
