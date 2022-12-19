@@ -21,12 +21,12 @@ func main() {
 	prettyPtr := flag.Bool("pretty", true, "display pretty output; otherwise do: -pretty=false")
 	flag.Parse()
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: scrub-pii <input json file> <sensitive fields file>")
+		fmt.Println("Usage: scrub <sensitive fields file> <input json file>")
 		os.Exit(1)
 	}
 
-	inputPath := flag.Args()[0]
-	sensitiveFieldsPath := flag.Args()[1]
+	sensitiveFieldsPath := flag.Args()[0]
+	inputPath := flag.Args()[1]
 
 	// scrub the input file for the given sensitive fields
 	output, err := ScrubPersonalInfo(inputPath, sensitiveFieldsPath)
