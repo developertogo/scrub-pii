@@ -21,7 +21,7 @@ func main() {
 	prettyPtr := flag.Bool("pretty", true, "display pretty output; otherwise do: -pretty=false")
 	flag.Parse()
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: scrub <input json file> <sensitive fields file>")
+		fmt.Println("Usage: scrub-pii <input json file> <sensitive fields file>")
 		os.Exit(1)
 	}
 
