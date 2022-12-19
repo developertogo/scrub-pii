@@ -1,0 +1,16 @@
+[{
+  "name": "Kelly Doe",
+  "email": "kdoe@example.com",
+  "id": 12324,
+  "phone": "5551234567",
+  "account_balance": 1234.56,
+  "title": "manager"
+},
+{
+  "name": "Kelly Doe",
+  "email": "kdoe@example.com",
+  "id": 12324,
+  "phone": "5551234567",
+  "account_balance": 1234.56,
+  "title": "manager"
+}]
