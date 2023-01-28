@@ -12,14 +12,7 @@ import (
 	"reflect"
 	"regexp"
 	"strings"
-
-	"github.com/perimeterx/marshmallow"
 )
-
-// the only known property in the input json ahead of time
-type userID struct {
-	ID int `json:"id"`
-}
 
 // return a json string with scrubbed sensitive information from the provided input and sensitive fields files
 func ScrubPersonalInfo(inputPath, sensitiveFieldsPath string) (string, error) {
@@ -33,8 +26,8 @@ func ScrubPersonalInfo(inputPath, sensitiveFieldsPath string) (string, error) {
 	inputFile, _ := ioutil.ReadFile(inputPath)
 	sensitiveFields, _ := getSensitiveFields(sensitiveFieldsPath)
 
-	uid := userID{}
-	input, err := marshmallow.Unmarshal([]byte(inputFile), &uid)
+	var input interface{}
+	err := json.Unmarshal([]byte(inputFile), &input)
 	if err != nil {
 		log.Fatal(err)
 		return "", err
@@ -51,7 +44,7 @@ func ScrubPersonalInfo(inputPath, sensitiveFieldsPath string) (string, error) {
 	b, _ = json.Marshal(input)
 
 	// reset all scrubbed values back to their original values
-	scrubRecursive(input, "", sensitiveFields, &savedValues, false /* unmask */, false /* doScrub */)
+	scrubRecursive(&input, "", sensitiveFields, &savedValues, false /* unmask */, false /* doScrub */)
 
 	// return the scrubbed string
 	return string(b), nil
@@ -80,10 +73,6 @@ func scrubRecursive(field interface{}, fieldName string, sensitiveFields map[str
 		return
 	}
 
-	// skip if no field names
-	if fieldName == "" {
-		return
-	}
 	// skip these types
 	if !fieldValue.CanSet() || fieldValue.IsZero() {
 		return
@@ -91,8 +80,9 @@ func scrubRecursive(field interface{}, fieldName string, sensitiveFields map[str
 
 	if fieldType.Kind() == reflect.Interface {
 		_, doFieldScrub := sensitiveFields[strings.ToLower(fieldName)]
-		// if parent field is sensitive field, scrub all children (sensitive or not), track in doScrub
-		ok := doScrub || doFieldScrub
+		// skip if no field name and if parent field is a sensitive field, scrub all children
+		// (sensitive or not), track in doScrub
+		ok := fieldName != "" && (doScrub || doFieldScrub)
 
 		// scrub leaf nodes; otherwise, continue recursing
 		switch fValue := fieldValue.Interface().(type) {

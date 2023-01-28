@@ -1,4 +1,4 @@
-module scrub-pii
+module scrub
 
 go 1.19
 
